@@ -1,12 +1,10 @@
-set :stage, :local
-set :server_name, "10.3.47.62"
+set :stage, :test
 
-set :server_domain_name, "commission.wltest.com"
 set :repo_url, 'git@git.rfdoa.cn:java/price.git'
 set :branch, "dev"
 
 set :log_level, :debug
-set :deploy_to, "/data/www/price"
+set :deploy_to, "/data/www/spree"
 
 set :use_sudo, true
 set :thin_config, "#{shared_path}/config/thin.yml"

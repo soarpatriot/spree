@@ -1,13 +1,13 @@
 # config valid only for Capistrano 3.1
-lock '3.4.0'
+lock '3.5.0'
 
-set :application, 'price'
-set :repo_url, 'git@git.rfdoa.cn:java/price.git'
+set :application, 'spree'
+set :repo_url, 'git@github.com:soarpatriot/spree.git'
 
 set :rails_env, 'production'
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.1.5@price'
+set :rvm_ruby_version, '2.1.5'
 
 set :scm, :git
 
@@ -63,7 +63,6 @@ end
 
 after "deploy:check", "nginx:update_config"
 after "deploy:check", "thin:update_config"
-before "deploy:check", "sidekiq:update_config"
 
 before "deploy:cleanup_assets", "rvm:hook"
 before "deploy:compile_assets", "rvm:hook"
