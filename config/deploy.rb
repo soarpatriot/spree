@@ -2,7 +2,7 @@
 lock '3.5.0'
 
 set :application, 'spree'
-set :repo_url, 'git@github.com:soarpatriot/spree.git'
+set :repo_url, 'https://github.com/soarpatriot/spree.git'
 
 set :rails_env, 'production'
 
@@ -15,9 +15,9 @@ set :format, :pretty
 set :log_level, :debug
 set :pty, true
 
-set :linked_files, %w{config/database.yml config/settings/production.yml  config/secrets.yml config/oneapm.yml config/sidekiq.yml}
+set :linked_files, %w{config/database.yml  config/secrets.yml }
 
-set :linked_dirs, %w{bin log tmp public/system public/assets public/uploads}
+set :linked_dirs, %w{bin log tmp public/assets public/uploads}
 
 set :keep_releases, 5
 
@@ -61,7 +61,7 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-after "deploy:check", "nginx:update_config"
+#after "deploy:check", "nginx:update_config"
 after "deploy:check", "thin:update_config"
 
 before "deploy:cleanup_assets", "rvm:hook"
