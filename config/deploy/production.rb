@@ -1,5 +1,5 @@
 set :stage, :local
-set :server_name, "dreamreality.cn"
+set :server_name, "staging.cityhub.me"
 
 # set :repo_url, 'git@git.rfdoa.cn:java/price.git'
 set :branch, "master"

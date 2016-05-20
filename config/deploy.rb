@@ -7,7 +7,7 @@ set :repo_url, 'https://github.com/soarpatriot/spree.git'
 set :rails_env, 'production'
 
 set :rvm_type, :user
-set :rvm_ruby_version, '2.1.5'
+set :rvm_ruby_version, '2.1.5@spree'
 
 set :scm, :git
 
@@ -61,7 +61,7 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-#after "deploy:check", "nginx:update_config"
+after "deploy:check", "nginx:update_config"
 after "deploy:check", "thin:update_config"
 
 before "deploy:cleanup_assets", "rvm:hook"
